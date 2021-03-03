@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="utf-8" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    <link href="app-content/app.css" rel="stylesheet" />
+	<script src="node_modules/angular/angular.js"></script>
+	<script src="node_modules/angular-animate/angular-animate.js"></script>
+	<script src="node_modules/angular-aria/angular-aria.js"></script>
+	<script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+	<script src="node_modules/angular-ui-select2/src/select2.js"></script>
+
+    
+	<script src="node_modules/angular-material/angular-material.js"></script>
+	<script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+</head>
+<body ng-app="loginapp">
+    <div class="jumbotron">
+        <div class="container">
+            <div class="col-sm-8 col-sm-offset-2">
+                <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
+                <!-- <div ng-view></div> -->
+            </div>
+        </div>
+    </div>
+    <div class="main" ui-view="">
+	</div>
+
+    <script src="app.js"></script>
+    <script src="constant.js"></script>
+    <script src="app-services/authentication.service.js"></script>
+    <script src="app-services/flash.service.js"></script>
+
+    <!-- Real user service that uses an api -->
+    <!-- <script src="app-services/user.service.js"></script> -->
+
+    <!-- Fake user service for demo that uses local storage -->
+    <script src="app-services/user.service.local-storage.js"></script>
+
+    <script src="controllers/forgotController.js"></script>
+    <script src="controllers/loginController.js"></script>
+    <script src="controllers/registerController.js"></script>
+</body>
+</html>
